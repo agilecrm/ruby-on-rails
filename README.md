@@ -81,7 +81,7 @@ Table of contents
 #### 1.1 To create a contact
 
 ```javascript
-contact_data = '{
+contact_data = "{
     "star_value": "4",
     "lead_score": "92",
     "tags": [
@@ -126,7 +126,7 @@ contact_data = '{
             "value": "Custom value"
         }
     ]
-}'
+}"
 parsed_contact_data = JSON.parse(contact_data) 
 print(AgileCRM.request :post, "contacts", parsed_contact_data) 
 ```

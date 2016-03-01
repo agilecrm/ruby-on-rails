@@ -1,4 +1,3 @@
-Ruby on Rails
 Agile CRM Ruby API 
 =================
 
@@ -12,56 +11,22 @@ Table of contents
 **[Requirements](#requirements)**
 
 **[1 Contact](#1-contact)**
-  * [1.1 To create a contact](#11-to-create-a-contact)
-  * [1.2 To fetch contact data](#12-to-fetch-contact-data)
-  * [1.3 To delete a contact](#13-to-delete-a-contact)
-  * [1.4 To update a contact](#14-to-update-a-contact)
-  * [1.5 Update properties of a contact (partial update)](#15-update-properties-of-a-contact-partial-update)best to use against update contact :+1:
-  * [1.6 Update star value](#16-update-star-value)
-  * [1.7 Update lead score](#17-update-lead-score)
-  * [1.8 Update tags by contact id](#18-update-tags-by-contact-id)
-  * [1.9 Adding Tags to a contact based on Email](#19-adding-tags-to-a-contact-based-on-email)
-  * [1.10 Delete Tags to a contact based on Email](#110-delete-tags-to-a-contact-based-on-email)
+  * [1 To create a contact](#11-to-create-a-contact)
+  * [2 To fetch contact data](#12-to-fetch-contact-data)
+  * [3 To delete a contact](#13-to-delete-a-contact)
+  * [4 To update a contact](#14-to-update-a-contact)
 
 **[2. Company](#2-company)**
-  * [2.1 To create a company](#21-to-create-a-company)
-  * [2.2 To get a company](#22-to-get-a-company)
-  * [2.3 To delete a company](#23-to-delete-a-company)
-  * [2.4 To update a company](#24-to-update-a-company)
-  * [2.5 Update properties of a company (partial update)](#25-update-properties-of-a-company-partial-update)best to use against update company :+1:
-  * [2.6 Update star value of a company](#26-update-star-value-of-a-company)
-  * [2.7 Get list of companies](#27-get-list-of-companies)
-  * [2.8 Search Contacts/Companies](#28-search-contactscompanies)
+  * [1 To create a company](#21-to-create-a-company)
+  * [2 To get a company](#22-to-get-a-company)
+  * [3 To delete a company](#23-to-delete-a-company)
+  * [4 To update a company](#24-to-update-a-company)
 
 **[3. Deal (Opportunity)](#3-deal-opportunity)**
-  * [3.1 To create a deal](#31-to-create-a-deal)
-  * [3.2 To get a deal](#32-to-get-a-deal)
-  * [3.3 To delete a deal](#33-to-delete-a-deal)
-  * [3.4 To update deal](#34-to-update-deal)
-  * [3.5 To update deal (Partial update)](#35-to-update-deal-partial-update)best to use against update deal :+1:
-  * [3.6 Get deals related to specific contact by contact id](#36-get-deals-related-to-specific-contact-by-contact-id)
-
-**[4. Note](#4-note)**
-  * [4.1 To create a note](#41-to-create-a-note)
-  * [4.2 To get all notes related to specific contact](#42-to-get-all-notes-related-to-specific-contact)
-  * [4.3 To update a note](#43-to-update-a-note)
-  
-**[5. Task](#5-task)**
-  * [5.1 To create a task](#51-to-create-a-task)
-  * [5.2 To get a task](#52-to-get-a-task)
-  * [5.3 To delete a task](#53-to-delete-a-task)
-  * [5.4 To update a task](#54-to-update-a-task)
-
-**[6. Event](#6-event)**
-  * [6.1 To create a event](#61-to-create-a-event)
-  * [6.2 To delete a event](#62-to-delete-a-event)
-  * [6.3 To update a event](#63-to-update-a-event)
-
-**[7. Deal Tracks and Milestones](#7-deal-tracks-and-milestones)**
-  * [7.1 To create a track](#71-to-create-a-track)
-  * [7.2 To get all tracks](#72-to-get-all-tracks)
-  * [7.3 To update track](#73-to-update-track)
-  * [7.4 To delete a track](#74-to-delete-a-track)
+  * [1 To create a deal](#31-to-create-a-deal)
+  * [2 To get a deal](#32-to-get-a-deal)
+  * [3 To delete a deal](#33-to-delete-a-deal)
+  * [4 To update deal](#34-to-update-deal)
 
 ##Intro
 
@@ -152,7 +117,7 @@ print(AgileCRM.request :delete, "contacts/5748927693324288", nil)
 
 #### 1.4 To update a contact
 
-```javascript
+```json
 
 update_contact_data = '{
     "id": "5748927693324288",
@@ -177,7 +142,7 @@ print(AgileCRM.request :put, "contacts/edit-properties", parsed_update_contact_d
 
 #### 2.1 To create a company
 
-```javascript
+```json
 company_data = '{
     "type": "COMPANY",
     "star_value": 4,
@@ -243,7 +208,7 @@ print(AgileCRM.request :delete, "contacts/5748927693324288", nil)
 ```
 #### 2.4 To update a company
 
-```javascript
+```json
 update_company_data = '{
     "id":5651082298523648,
     "properties": [
@@ -289,9 +254,8 @@ print(AgileCRM.request :put, "contacts/edit-properties", parsed_update_company_d
 - 'page_size' - Number of results to fetch
 - 'type' - Should be 'PERSON' for searching Contacts and 'COMPANY' for Companies
 
-```javascript
+```json
 
-$companies = curl_wrap("search?q=Google&page_size=10&type='COMPANY'", null, "GET", "application/json");
 print(AgileCRM.request :get, "search?q=Google&page_size=10&type='COMPANY'", nil)
 ```
 
@@ -301,7 +265,7 @@ print(AgileCRM.request :get, "search?q=Google&page_size=10&type='COMPANY'", nil)
 
 #### 3.1 To create a deal
 
-```javascript
+```json
 deal_data = '{
     "name": "Deal-Tomato",
     "expected_value": "500",
@@ -335,7 +299,7 @@ print(AgileCRM.request :delete, "opportunity/5743182100824064", nil)
 
 #### 3.4 To update deal
 
-```javascript
+```json
 update_deal_data = '{
     "id": "5743182100824064",
     "name": "Deal-Tomato-changed",

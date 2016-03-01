@@ -21,6 +21,7 @@ Table of contents
   * [2 To get a company](#22-to-get-a-company)
   * [3 To delete a company](#23-to-delete-a-company)
   * [4 To update a company](#24-to-update-a-company)
+  * [5 Search Contacts/Companies](#28-search-contactscompanies)
 
 **[3. Deal (Opportunity)](#3-deal-opportunity)**
   * [1 To create a deal](#31-to-create-a-deal)
@@ -248,7 +249,7 @@ parsed_update_company_data = JSON.parse(update_company_data)
 print(AgileCRM.request :put, "contacts/edit-properties", parsed_update_company_data) 
 ```
 
-#### 2.8 Search Contacts/Companies
+#### 2.5 Search Contacts/Companies
 
 - 'q' - Search keyword (all contact/company default fields and searchable custom fields will be searched)
 - 'page_size' - Number of results to fetch

@@ -80,7 +80,7 @@ Table of contents
 
 #### 1.1 To create a contact
 
-```javascript
+```json
 contact_data = {
     "star_value": "4",
     "lead_score": "92",

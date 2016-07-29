@@ -46,6 +46,12 @@ Table of contents
 
 #### 1.1 To create a contact
 
+- [**About properties JSON**](https://github.com/agilecrm/rest-api/blob/master/README.md#properties-json)
+
+- [**Properties JSON Complete Example**](https://github.com/agilecrm/rest-api/blob/master/README.md#properties-json-complete-example)
+
+- [**Acceptable request representation for contact**](https://github.com/agilecrm/rest-api#acceptable-request-representation)
+
 ```json
 contact_data = '{
     "star_value": "4",

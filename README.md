@@ -15,6 +15,10 @@ Table of contents
   * [2 To fetch contact data](#12-to-fetch-contact-data)
   * [3 To delete a contact](#13-to-delete-a-contact)
   * [4 To update a contact](#14-to-update-a-contact)
+  * [5 To update star value](#15-to-update-star-value)
+  * [6 To update lead score](#16-to-update-lead-score)
+  * [7 Update tags by contact id](#17-update-tag-by-contact-id)
+  * [8 Delete tags by contact id](#18-delete-tag-by-contact-id)
 
 **[2. Company](#2-company)**
   * [1 To create a company](#21-to-create-a-company)
@@ -143,6 +147,56 @@ update_contact_data = '{
 }'
 parsed_update_contact_data = JSON.parse(update_contact_data) 
 print(AgileCRM.request :put, "contacts/edit-properties", parsed_update_contact_data) 
+```
+
+#### 1.5 To update star value
+```json
+
+update_starvalue_data = '{
+    "id": "5717446287687680",
+    "star_value": 2
+}'
+parsed_starvalue_data = JSON.parse(update_starvalue_data)
+#print(AgileCRM.request :put, "contacts/edit/add-star", parsed_starvalue_data)
+```
+
+#### 1.6 To update lead score
+```json
+
+update_leadscore_data = '{
+    "id": "5717446287687680",
+    "lead_score": 20
+}'
+parsed_leadscore_data = JSON.parse(update_leadscore_data)
+#print(AgileCRM.request :put, "contacts/edit/lead-score", parsed_leadscore_data) 
+```
+
+#### 1.7 Update tags by contact id
+```json
+
+update_tags_data = '{
+    "id": "5717446287687680",
+    "tags": [
+        "test1",
+        "test2"
+    ]
+}'
+parsed_tags_data = JSON.parse(update_tags_data)
+#print(AgileCRM.request :put, "contacts/edit/tags", parsed_tags_data) 
+```
+
+#### 1.8 Delete tags by contact id
+```json
+
+delete_tags_data = '{
+    "id": "5717446287687680",
+    "tags": [
+        "test1",
+        "test2"
+    ]
+}'
+parsed_deletedcontact_data = JSON.parse(delete_tags_data)
+#print(AgileCRM.request :put, "contacts/delete/tags", parsed_deletedcontact_data) 
 ```
 
 ## 2. Company

@@ -17,8 +17,8 @@ Table of contents
   * [4 To update a contact](#14-to-update-a-contact)
   * [5 To update star value](#15-to-update-star-value)
   * [6 To update lead score](#16-to-update-lead-score)
-  * [7 Update tags by contact id](#17-update-tag-by-contact-id)
-  * [8 Delete tags by contact id](#18-delete-tag-by-contact-id)
+  * [7 Update tags by contact id](#17-update-tags-by-contact-id)
+  * [8 Delete tags by contact id](#18-delete-tags-by-contact-id)
 
 **[2. Company](#2-company)**
   * [1 To create a company](#21-to-create-a-company)
